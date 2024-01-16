@@ -141,7 +141,7 @@ router.get('/:gameId', function (req, res) {
     <h2>${game.gameName}</h2>
     <p>Developer: ${game.developer}</p>
     <p>Year released: ${game.published}</p>
-    <p>Is it installed? ${game.installed ? 'Yes' : 'No'}</p>
+    <p>Game is ${game.installed ? '<span class="green">installed</span>' : '<span class="red">not installed</span>'}</p>
     <a href="${index}/${link}"><button>${game.installed ? 'Uninstall Game' : 'Install game'}</button></a>
     `
 
