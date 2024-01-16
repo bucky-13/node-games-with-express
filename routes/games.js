@@ -48,13 +48,11 @@ function displayGamesList() {
 
     for (let i = 0; i < games.length; i++) {
     
-          gamesList = gamesList +  `
+        gamesList = gamesList +  `
         <li>
         <ul>
         <li><a href="games/${i}"><h3>${games[i].gameName}</h3></a></li>
-        <li>${games[i].developer}</li>
-        <li>${games[i].published}</li>
-        <li>Installed? ${games[i].installed ? 'Yes' : 'No'}</li>
+        <li>Game is ${games[i].installed ? '<span class="green">installed</span>' : '<span class="red">not installed</span>'}</li>
         </ul>
         </li>`
         console.log(gamesList);

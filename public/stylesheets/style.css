@@ -10,3 +10,12 @@ a {
 ul {
   list-style: none;
 }
+
+.green {
+  color: green;
+  font-weight: 700;
+}
+.red {
+  color: darkred;
+  font-weight: 700;
+}
