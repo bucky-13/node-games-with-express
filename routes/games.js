@@ -30,13 +30,14 @@ const games = [
 
 function generateHTML(pageBody, title) {
     let htmlBase = `
-        <html>
-    <head>
-    <title>${title}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    </head>
+    <html>
+      <head>
+        <title>${title}</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+      </head>
     <body>
-    ${pageBody}
+      <h1>Buckys node.js & Express experiments</h1>
+      ${pageBody}
     </body>
     </html>
     `
@@ -64,6 +65,7 @@ router.get('/', function (req, res, next) {
     let gameList = displayGamesList();
 
     let pageSection = `<div>
+    <a href="/">Back to start page</a><br>
     <a href="games/addGame">Add new Game</a>
     <h1>Games Library</h1>
     <ul>
@@ -79,23 +81,31 @@ router.get('/', function (req, res, next) {
 
 router.get('/addGame', function (req, res, next) {
 
-    let pageSection = `<a href="/games">View Games List</a>
+    let pageSection = `
+    <a href="/">Back to start page</a><br>
+    <a href="/games">View Games List</a>
     <h2>Add new Game to Library</h2>
 
     <form action="savegame" method="post">
-    <label>
-    <span>Name of the Game: </span>
-    <input type="text" name="gameName"></input>
-    </label><br>
-    <label>
-    <span>Name of the Developer: </span>
-    <input type="text" name="developer"></input>
-    </label><br>
-    <label>
-    <span>Year of Release: </span>
-    <input type="number" name="published"></input>
-    </label><br>
-    <input type="submit" value="Add game"></input>
+    <div>
+        <label>
+            <span>Name of the Game: </span>
+            <input type="text" name="gameName" class="textfield" />
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Name of the Developer: </span>
+            <input type="text" name="developer" class="textfield" />
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Year of Release: </span>
+            <input type="number" name="published" class="textfield" />
+        </label>
+    </div>
+    <input type="submit" value="Add game">
     </form>`
 
     let addGameForm = generateHTML(pageSection, 'Add new game to Library')
@@ -111,6 +121,7 @@ router.post('/savegame', function (req, res) {
     games.push(newGame);
 
     let pageSection = `
+    <a href="/">Back to start page</a><br>
     <a href="/games">View Games List</a><br>
     <h2>${req.body.gameName} added to your library</h2>
     Name: ${req.body.gameName}<br> 
@@ -136,6 +147,7 @@ router.get('/:gameId', function (req, res) {
     }
 
     let pageSection = `
+    <a href="/">Back to start page</a><br>
     <a href="/games">View Games List</a><br>
     <a href="/games/addGame">Add new Game</a>
     <h2>${game.gameName}</h2>
@@ -157,6 +169,7 @@ router.get('/:gameId/install', function (req, res) {
     game.installed = true;
 
     let pageSection = `
+    <a href="/">Back to start page</a><br>
     <a href="/games">View Games List</a><br>
     <a href="/games/addGame">Add new Game</a>
     <h2>Success!</h2>
@@ -175,6 +188,7 @@ router.get('/:gameId/uninstall', function (req, res) {
     game.installed = false;
 
     let pageSection = `
+    <a href="/">Back to start page</a><br>
     <a href="/games">View Games List</a><br>
     <a href="/games/addGame">Add new Game</a>
     <h2>Success!</h2>
