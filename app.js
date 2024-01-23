@@ -2,13 +2,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let cors = require('cors');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var gamesRouter = require('./routes/games');
 
 var app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -17,35 +18,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/css', express.static('/stylesheets/style.css'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/games', gamesRouter);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
-
-const users = [
-  {
-    _id: 1,
-    userName: 'Simon',
-    password: 'bajs',
-  },
-  {
-    _id: 2,
-    userName: 'Ramona',
-    password: 'ramms',
-  },
-  {
-    _id: 3,
-    userName: 'tim',
-    password: 'tim',
-  },
-  {
-    _id: 4,
-    userName: 'Colin',
-    password: 'password',
-  },
-];
 
 function generateHTML(pageBody, title) {
   let htmlBase = `

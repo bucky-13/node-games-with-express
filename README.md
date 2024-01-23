@@ -1,6 +1,8 @@
 # Test project to use node.js & express with vanilla JS
 
-User can add new games, "install" them and view specific games. 
+## API part of the app
+
+User can add new games, "install" them and view specific games.
 
 Games are stored locally in an array for now.
 
