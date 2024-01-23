@@ -6,7 +6,6 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var gamesRouter = require('./routes/games');
-var userArray = require('./routes/userArray');
 
 var app = express();
 
@@ -20,7 +19,6 @@ app.use('/css', express.static('/stylesheets/style.css'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/games', gamesRouter);
-app.use('/userArray', userArray);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client', 'index.html'));
@@ -64,6 +62,7 @@ function generateHTML(pageBody, title) {
 
         ${pageBody}
       </body>
+      <script src="js/script.js"></script>
     </html>
     `;
   return htmlBase;
@@ -102,8 +101,8 @@ app.post('/loginScreen', function (req, res) {
     let userID = loginSuccessful[1]._id;
 
     let pageBody = `
-    <h2>Login Successful!</h2>
-    <a href="/welcome">Return to start page</a>
+    <h2 class="loginH2 green">Login Successful!</h2>
+    <a href="/" class="returnLink">Return to start page</a>
     `;
 
     let loginscreen = generateHTML(pageBody, 'Login Successful!');
@@ -111,8 +110,8 @@ app.post('/loginScreen', function (req, res) {
     res.send(loginscreen);
   } else {
     let pageBody = `
-    <h2>Login failed</h2>
-    <a href="/">Return to start page</a>
+    <h2 class="loginH2 red">Login failed</h2>
+    <a href="/" class="returnLink">Return to start page</a>
     `;
 
     let loginscreen = generateHTML(pageBody, 'Login Successful!');
