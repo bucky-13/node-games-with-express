@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "gameName": "Baldur's Gate 3",
+    "developer": "Larian",
+    "published": 2023,
+    "installed": false
+  },
+  {
+    "id": "2",
+    "gameName": "Civilization VI",
+    "developer": "Firaxis Games",
+    "published": 2016,
+    "installed": false
+  },
+  {
+    "id": "3",
+    "gameName": "Valheim",
+    "developer": "Iron Gate",
+    "published": 2021,
+    "installed": true
+  },
+  {
+    "id": "4",
+    "gameName": "Elder Scrolls Online",
+    "developer": "ZOS Interactive",
+    "published": 2012,
+    "installed": false
+  },
+  {
+    "id": "5",
+    "gameName": "Timberborn",
+    "developer": "Mechanistry",
+    "published": 2020,
+    "installed": false
+  }
+]
