@@ -3,7 +3,6 @@ var router = express.Router();
 let cors = require('cors');
 
 const fs = require('fs');
-const { Z_FILTERED } = require('zlib');
 
 router.use(cors());
 
@@ -137,6 +136,30 @@ router.patch('/:gameId/uninstall', function (req, res) {
 
       res.send(game);
       return;
+    }
+  });
+});
+
+router.delete('/:gameId', (req, res) => {
+  fs.readFile('games.json', (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      let games = JSON.parse(data);
+      let index = req.params.gameId;
+      let deletedGame = games.find((game) => game.id == index);
+      games = games.filter((game) => game.id != index);
+
+      fs.writeFile(
+        'games.json',
+        JSON.stringify(games, null, 2),
+        function (err) {
+          if (err) {
+            console.log(err);
+          }
+        }
+      );
+      res.send(deletedGame);
     }
   });
 });
