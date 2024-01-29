@@ -173,6 +173,7 @@ router.delete('/:gameId', (req, res) => {
       let index = req.params.gameId;
       let deletedGame = games.find((game) => game.id == index);
       games = games.filter((game) => game.id != index);
+      // this needs fixing
       let imagePath = deletedGame.image;
       fs.unlinkSync(imagePath);
 
