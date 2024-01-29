@@ -4,6 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 let cors = require('cors');
 const multer = require('multer');
 const path = require('path');
+// let fs = require('fs');
 
 const MIME_TYPE_MAP = {
   'image/png': 'png',
@@ -172,6 +173,8 @@ router.delete('/:gameId', (req, res) => {
       let index = req.params.gameId;
       let deletedGame = games.find((game) => game.id == index);
       games = games.filter((game) => game.id != index);
+      let imagePath = deletedGame.image;
+      fs.unlinkSync(imagePath);
 
       fs.writeFile(
         'games.json',

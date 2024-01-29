@@ -46,5 +46,13 @@
     "published": 2023,
     "installed": true,
     "image": "http://localhost:3000/images/Enshrouded.jpg"
+  },
+  {
+    "id": "4c86af24-46d7-4b5b-8cbe-37388c3c56c3",
+    "gameName": "Conan Exiles",
+    "developer": "Funcom",
+    "published": 2016,
+    "installed": false,
+    "image": "http://localhost:3000/images/Conan-Exiles.jpg"
   }
 ]
