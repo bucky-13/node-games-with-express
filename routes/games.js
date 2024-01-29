@@ -3,8 +3,6 @@ var router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 let cors = require('cors');
 const multer = require('multer');
-const path = require('path');
-// let fs = require('fs');
 
 const MIME_TYPE_MAP = {
   'image/png': 'png',
@@ -32,6 +30,7 @@ let storage = multer.diskStorage({
 
         const ext = MIME_TYPE_MAP[file.mimetype];
         cb(null, imgName + '.' + ext);
+        console.log('i save image');
       }
     });
   },
@@ -173,9 +172,12 @@ router.delete('/:gameId', (req, res) => {
       let index = req.params.gameId;
       let deletedGame = games.find((game) => game.id == index);
       games = games.filter((game) => game.id != index);
-      // this needs fixing
-      let imagePath = deletedGame.image;
-      fs.unlinkSync(imagePath);
+
+      if (deletedGame.image != '') {
+        let imageName = deletedGame.image;
+        let imagePath = imageName.replace('http://localhost:3000', 'public');
+        fs.unlinkSync(imagePath);
+      }
 
       fs.writeFile(
         'games.json',
@@ -200,6 +202,7 @@ router.post('/:gameId/saveimage', upload.single('image'), (req, res) => {
       let index = req.params.gameId;
       let game = games.find((game) => game.id == index);
       game.image = `http://localhost:3000/images/${req.file.filename}`;
+      console.log('I do stuff in post');
 
       fs.writeFile(
         'games.json',
@@ -210,6 +213,7 @@ router.post('/:gameId/saveimage', upload.single('image'), (req, res) => {
           }
         }
       );
+      console.log('I write stuff');
       res.send(game);
     }
   });

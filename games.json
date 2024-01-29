@@ -12,7 +12,7 @@
     "gameName": "Civilization VI",
     "developer": "Firaxis Games",
     "published": 2016,
-    "installed": true,
+    "installed": false,
     "image": "http://localhost:3000/images/Civilization-VI.jpg"
   },
   {
@@ -40,19 +40,19 @@
     "image": "http://localhost:3000/images/Timberborn.jpg"
   },
   {
-    "id": "01e93392-f198-46cc-845b-0acc534cec85",
+    "id": "07d852a5-9caa-4055-9b99-74054989a13c",
     "gameName": "Enshrouded",
     "developer": "Keen Games",
     "published": 2023,
-    "installed": true,
+    "installed": false,
     "image": "http://localhost:3000/images/Enshrouded.jpg"
   },
   {
-    "id": "4c86af24-46d7-4b5b-8cbe-37388c3c56c3",
+    "id": "8dc3e0ef-da5a-4874-b3f2-5c29316a02c3",
     "gameName": "Conan Exiles",
     "developer": "Funcom",
     "published": 2016,
-    "installed": false,
+    "installed": true,
     "image": "http://localhost:3000/images/Conan-Exiles.jpg"
   }
 ]
