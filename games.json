@@ -1,30 +1,42 @@
 [
   {
-    "id": "1",
+    "id": "f75647fe-c3f0-4c98-9707-6c2a6a04753e",
     "gameName": "Baldur's Gate 3",
-    "developer": "Larian",
+    "developer": "Larian Studios",
     "published": 2023,
-    "installed": false
+    "installed": true,
+    "image": "http://localhost:3000/images/Baldurs-Gate-3.jpg"
   },
   {
-    "id": "2",
+    "id": "99c5e4f0-0b41-455d-a2ec-0f7c3b7c7568",
     "gameName": "Civilization VI",
     "developer": "Firaxis Games",
     "published": 2016,
-    "installed": false
+    "installed": true,
+    "image": "http://localhost:3000/images/Civilization-VI.jpg"
   },
   {
-    "id": "3",
+    "id": "47f3ceda-c074-4589-85fa-db57f4e1d25d",
     "gameName": "Valheim",
     "developer": "Iron Gate",
     "published": 2021,
-    "installed": true
+    "installed": true,
+    "image": "http://localhost:3000/images/Valheim.png"
   },
   {
-    "id": "4",
+    "id": "07bf3022-3771-4273-a0d1-f576b5c6952f",
     "gameName": "Elder Scrolls Online",
     "developer": "ZOS Interactive",
     "published": 2012,
-    "installed": false
+    "installed": true,
+    "image": "http://localhost:3000/images/Elder-Scrolls-Online.png"
+  },
+  {
+    "id": "caeacb47-5564-427a-a44e-607ad7c05dde",
+    "gameName": "Timberborn",
+    "developer": "Mechanistry",
+    "published": 2020,
+    "installed": false,
+    "image": "http://localhost:3000/images/Timberborn.jpg"
   }
 ]
