@@ -36,7 +36,15 @@
     "gameName": "Timberborn",
     "developer": "Mechanistry",
     "published": 2020,
-    "installed": false,
+    "installed": true,
     "image": "http://localhost:3000/images/Timberborn.jpg"
+  },
+  {
+    "id": "01e93392-f198-46cc-845b-0acc534cec85",
+    "gameName": "Enshrouded",
+    "developer": "Keen Games",
+    "published": 2023,
+    "installed": true,
+    "image": "http://localhost:3000/images/Enshrouded.jpg"
   }
 ]
